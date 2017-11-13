@@ -14,16 +14,31 @@ class IE_HoneySearch_Model_Observer
      * @param  Varien_Event_Observer $observer
      * @return $this
      */
-    public function controllerActionPredispatch (Varien_Event_Observer $observer)
+    public function controllerActionPredispatch ()
     {
-        $captchaParam = $this->_getCaptchaInputName();
-        $captchaValue = Mage::app()->getRequest()->getParam($captchaParam);
+        $this->_checkCaptcha();
+    }
 
-        if (!$captchaValue) {
-          return $this;
-        }
+    /**
+     * Check Captcha
+     *
+     * Looks for captcha query param and throws a
+     * `Mage_Core_Controller_Varien_Exception` if any value is found.
+     *
+     * @return $this
+     */
+    private function _checkCaptcha ()
+    {
+      $request = Mage::app()->getRequest();
 
-        $this->_captchaError();
+      $captchaParam = $this->_getCaptchaInputName();
+      $captchaValue = $request->getParam($captchaParam);
+
+      if (!$captchaValue) {
+        return $this;
+      }
+
+      $this->_captchaError();
     }
 
     /**
