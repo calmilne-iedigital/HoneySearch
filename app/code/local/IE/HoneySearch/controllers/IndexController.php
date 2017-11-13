@@ -9,6 +9,7 @@
 class IE_HoneySearch_IndexController extends Mage_Core_Controller_Front_Action
 {
     const ERROR_ROUTE = 'honeysearch/error/';
+    
     /**
      * indexAction description
      *
