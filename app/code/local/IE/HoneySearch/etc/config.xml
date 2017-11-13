@@ -37,7 +37,7 @@
                 <observers>
                     <ie_honeysearch>
                         <class>ie_honeysearch/observer</class>
-                        <method>sampleObserverMethod</method>
+                        <method>controllerActionPredispatch</method>
                     </ie_honeysearch>
                 </observers>
             </controller_action_predispatch>

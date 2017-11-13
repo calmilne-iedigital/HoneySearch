@@ -13,7 +13,7 @@ class IE_HoneySearch_ErrorController extends Mage_Core_Controller_Front_Action
      *
      * @return void
      */
-    public function indexAction()
+    public function indexAction ()
     {
         $this->loadLayout();
         $this->renderLayout();
