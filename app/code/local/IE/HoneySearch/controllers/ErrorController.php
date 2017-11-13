@@ -6,9 +6,8 @@
  * @package    IE_HoneySearch
  * @author     Callan Milne <callan.milne@ie.com.au>
  */
-class IE_HoneySearch_IndexController extends Mage_Core_Controller_Front_Action
+class IE_HoneySearch_ErrorController extends Mage_Core_Controller_Front_Action
 {
-    const ERROR_ROUTE = 'honeysearch/error/';
     /**
      * indexAction description
      *
@@ -16,6 +15,7 @@ class IE_HoneySearch_IndexController extends Mage_Core_Controller_Front_Action
      */
     public function indexAction()
     {
-        $this->_redirect(self::ERROR_ROUTE);
+        $this->loadLayout();
+        $this->renderLayout();
     }
 }
